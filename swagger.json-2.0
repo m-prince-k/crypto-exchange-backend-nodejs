@@ -1,0 +1,473 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Crypto Exchange",
+    "description": "Make a backend api",
+    "version": "1.0",
+    "url": [
+      "http://localhost:4000/"
+    ]
+  },
+  "servers": [
+    "http://localhost:5000",
+    "https://api.clientproject.net/api/v1/crypto/"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  
+  "paths": {
+    "/api/v1/crypto/register": {
+      "post": {
+        "x-swagger-router-controller": "home",
+        "operationId": "index",
+        "tags": [
+          "Register"
+        ],
+        
+        "description": "[Login 123](https://www.google.com)",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "You should pass here email and password",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "required": "true",
+                  "example": "jhon"
+                },
+                "email": {
+                  "type": "string",
+                  "required": "true",
+                  "example": "abc@yopmail.com"
+                },
+                "password": {
+                  "type": "string",
+                  "required": "true",
+                  "example": "123456"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/api/v1/crypto/login": {
+      "post": {
+        "x-swagger-router-controller": "home",
+        "operationId": "index",
+        "tags": [
+          "Login"
+        ],
+        "description": "[Login 123](https://www.google.com)",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "You should pass here email and password",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "required": "true",
+                  "example": "testing123@gmail.com"
+                },
+                "password": {
+                  "type": "string",
+                  "required": "true",
+                  "example": "123456"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/api/v1/crypto/forgotPassword": {
+      "post": {
+        "x-swagger-router-controller": "home",
+        "operationId": "forgotPassword",
+        "tags": [
+          "Forgot Password"
+        ],
+        "description": "Forgot Password",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "You should pass here email for getting the mail link",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "required": "true",
+                  "example": "abc@yopmail.com"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/api/v1/crypto/resetPassword": {
+      "post": {
+        "x-swagger-router-controller": "home",
+        "operationId": "resetPassword",
+        "tags": [
+          "Reset Password"
+        ],
+        "description": "Reset Password",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "You should pass the new password and confirm password",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "new_password": {
+                  "type": "string",
+                  "required": "true",
+                  "example": "123456"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/api/v1/crypto/changePassword": {
+      "post": {
+        "x-swagger-router-controller": "home",
+        "operationId": "changePassword",
+        "tags": [
+          "Change Password"
+        ],
+        "description": "change Password",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "you can change change password along with old and new and confirm password",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "old_password": {
+                  "type": "string",
+                  "required": "true",
+                  "example": "123456"
+                },
+                "new_password": {
+                  "type": "string",
+                  "required": "true",
+                  "example": "123456"
+                },
+                "confirm_password": {
+                  "type": "string",
+                  "required": "true",
+                  "example": "123456"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/api/v1/crypto/editProfile": {
+      "post": {
+        "x-swagger-router-controller": "home",
+        "operationId": "index",
+        "tags": [
+          "editProfile"
+        ],
+        "description": "editProfile",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "you can edit the profile along with fields",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "example": "jhon"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "jhon@gmail.com"
+                },
+                "date_of_birth": {
+                  "type": "string",
+                  "example": "2023/06/05"
+                },
+                "present_address": {
+                  "type": "string",
+                  "example": "phase 5 mohali tower punjab"
+                },
+                "permanent_address": {
+                  "type": "string",
+                  "example": "hno 137 phase 5 madanpur chowk punjab"
+                },
+                "city": {
+                  "type": "string",
+                  "example": "mohali"
+                },
+                "postel_code": {
+                  "type": "string",
+                  "example": "postel_code"
+                },
+                "country": {
+                  "type": "string",
+                  "example": "india"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/api/v1/crypto/getProfile": {
+      "get": {
+        "x-swagger-router-controller": "home",
+        "operationId": "index",
+        "tags": [
+          "getProfile"
+        ],
+        "description": "getProfile",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "you can edit the profile along with fields",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/api/v1/crypto/createTicket": {
+      "post": {
+        "x-swagger-router-controller": "home",
+        "operationId": "index",
+        "tags": [
+          "createTicket"
+        ],
+        "description": "createTicket",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "you can make a ticket along with ticket field",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "enquiry": {
+                  "type": "string",
+                  "example": "jhon"
+                },
+                "department": {
+                  "type": "string",
+                  "example": "xyz"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "hey this is description"
+                },
+                "upload_document": {
+                  "type": "string",
+                  "example": "hey this is description"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/api/v1/crypto/getAllSupport": {
+      "post": {
+        "x-swagger-router-controller": "home",
+        "operationId": "index",
+        "tags": [
+          "getAllSupport"
+        ],
+        "description": "getAllSupport",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "getAllSupport",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "number",
+                  "required":"true",
+                  "example": 2
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/api/v1/crypto/statusUpdateForSupport/{id}": {
+      "get": {
+        "x-swagger-router-controller": "home",
+        "operationId": "index",
+        "tags": [
+          "statusUpdateForSupport"
+        ],
+        "description": "statusUpdateForSupport",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "update the status of support for users",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/api/v1/crypto/getAllSupportDepartment": {
+      "get": {
+        "x-swagger-router-controller": "home",
+        "operationId": "index",
+        "tags": [
+          "getAllSupportDepartment"
+        ],
+        "description": "getAllSupportDepartment",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "getAllSupportDepartment",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/api/v1/crypto/viewTicket/{id}": {
+      "get": {
+        "x-swagger-router-controller": "home",
+        "operationId": "index",
+        "tags": [
+          "viewTicket"
+        ],
+        "description": "viewTicket",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "viewTicket",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "in":"query",
+                  "type": "string",
+                  "required": "true",
+                  "example": "1"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/api/v1/crypto/createThread": {
+      "post": {
+        "x-swagger-router-controller": "home",
+        "operationId": "index",
+        "tags": [
+          "createThread"
+        ],
+        "description": "createThread",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": " you can make a ticket thread with response",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/api/v1/crypto/getAllThread": {
+      "get": {
+        "x-swagger-router-controller": "home",
+        "operationId": "index",
+        "tags": [
+          "getAllThread"
+        ],
+        "description": "getAllThread",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": " you can get all the ticket thread along with tickets",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+              "id": {
+                  "type": "number",
+                  "required":"true",
+                  "example": 2
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    }
+
+
+
+  }
+}
